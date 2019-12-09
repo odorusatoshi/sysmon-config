@@ -3,3 +3,6 @@
 
 # sysmon-configの元Version
 - 4.2
+- 4.0
+
+config適用するとsplunk関連の起動プロセスのログが記録されなくなります。

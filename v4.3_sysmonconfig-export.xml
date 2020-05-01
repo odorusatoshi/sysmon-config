@@ -9,7 +9,7 @@
   Fork project:	<N/A>
   Fork license:	<N/A>
 
-  REQUIRED: Sysmon version 10.0.4.1 or higher (due to changes in syntax and bug-fixes)
+  REQUIRED: Sysmon version 11 or higher (due to changes in syntax and bug-fixes)
 	https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon
 
   NOTE: To collect Sysmon logs centrally for free, see https://aka.ms/WEF | Command to allow log access to the Network Service:
@@ -60,7 +60,7 @@
 
 -->
 
-<Sysmon schemaversion="4.22">
+<Sysmon schemaversion="4.3">
 	<!--SYSMON META CONFIG-->
 	<HashAlgorithms>md5,sha256</HashAlgorithms> <!-- Both MD5 and SHA256 are the industry-standard algorithms for identifying files -->
 	<CheckRevocation/> <!-- Check loaded drivers, log if their code-signing certificate has been revoked, in case malware stole one to sign a kernel driver -->

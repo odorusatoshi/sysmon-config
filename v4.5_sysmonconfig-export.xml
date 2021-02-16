@@ -1076,17 +1076,13 @@
   
   <!--SYSMON EVENT ID 23 : FileDelete (A file delete was detected)-->
   <RuleGroup name="" groupRelation="or">
-      <FileDelete onmatch="include">
-         <Rule groupRelation="and">
-            <TargetFilename condition="begin with">C:\Program Files\Qualys\QualysAgent</TargetFilename> <!--Writable for all users-->
-            <TargetFilename condition="contains any">.com;.bat;.exe;.reg;.ps1;.vbs;.vba;.lnk;.doc;.xls;.hta;.bin;.7z;.dll;.xla;.cmd;.sh;.lnk;.pptm;.scr;.msi;.sct</TargetFilename>
-         </Rule>      
+      <FileDelete onmatch="exclude">
       </FileDelete>
   </RuleGroup>
 
 	<!--SYSMON EVENT ID 24 : ClipboardChange (New content in the clipboard)-->
   <RuleGroup name="" groupRelation="or">
-         <ClipboardChange onmatch="include">
+         <ClipboardChange onmatch="exclude">
          </ClipboardChange>
   </RuleGroup>
 
@@ -1094,6 +1090,19 @@
 	<!--SYSMON EVENT ID 25 : ProcessTampering (Process image change)-->
   <RuleGroup name="" groupRelation="or">
       <ProcessTampering onmatch="exclude">
+	<Image condition="is">C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe</Image>
+        <Rule groupRelation="and">
+          <Image condition="begin with">C:\Program Files (x86)\Microsoft\Edge\Application\</Image>
+          <Image condition="end with">\BHO\ie_to_edge_stub.exe</Image>
+        </Rule>
+        <Rule groupRelation="and">
+          <Image condition="begin with">C:\Program Files (x86)\Microsoft\Edge\Application\</Image>
+          <Image condition="end with">\identity_helper.exe</Image>
+        </Rule> 
+        <Rule groupRelation="and">
+          <Image condition="begin with">C:\Program Files (x86)\Microsoft\EdgeUpdate\Install\</Image>
+          <Image condition="contains">\MicrosoftEdge_X64_</Image>
+        </Rule>         
       </ProcessTampering>
   </RuleGroup>
 

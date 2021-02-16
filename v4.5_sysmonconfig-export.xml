@@ -1076,7 +1076,6 @@
   
   <!--SYSMON EVENT ID 23 : FileDelete (A file delete was detected)-->
   <!--Reffer from olaf's include_writable_folders.xml -->
-  <RuleGroup name="" groupRelation="or">
    <RuleGroup name="" groupRelation="or">
       <FileDelete onmatch="include">
          <Rule groupRelation="and">
@@ -1224,7 +1223,6 @@
             <TargetFilename condition="contains any">.com;.bat;.exe;.reg;.ps1;.vbs;.vba;.lnk;.doc;.xls;.hta;.bin;.7z;.dll;.xla;.cmd;.sh;.lnk;.pptm;.scr;.msi;.sct</TargetFilename>
          </Rule>
       </FileDelete>
-     </RuleGroup>
   </RuleGroup>
 
   <!--SYSMON EVENT ID 24 : ClipboardChange (New content in the clipboard)-->

@@ -3,6 +3,21 @@
     <!-- Event ID 1 == ProcessCreate. Log all newly created processes -->
     <RuleGroup name="" groupRelation="or">
       <ProcessCreate onmatch="exclude"/>
+        <!-- Splunk UF -->
+			      <Image condition="contains">splunk</Image>
+			      <Image condition="contains">streamfwd</Image>
+			      <Image condition="contains">splunkd</Image>
+			      <Image condition="contains">splunkD</Image>
+			      <Image condition="contains">splunk</Image>
+			      <Image condition="contains">splunk-optimize</Image>
+			      <Image condition="contains">splunk-MonitorNoHandle</Image>
+			      <Image condition="contains">splunk-admon</Image>
+			      <Image condition="contains">splunk-netmon</Image>
+			      <Image condition="contains">splunk-regmon</Image>
+			      <Image condition="contains">splunk-winprintmon</Image>
+			      <Image condition="contains">btool</Image>
+			      <Image condition="contains">PYTHON</Image>
+      </ProcessCreate>
     </RuleGroup>
     <!-- Event ID 3 == NetworkConnect Detected. Log all network connections -->
     <RuleGroup name="" groupRelation="or">
